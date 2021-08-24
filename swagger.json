@@ -1,0 +1,39 @@
+{
+    "openapi":"3.0.1",
+    "info": {
+      "title": "Adota Pet",
+      "description": "Descrição API  Adota PET",    
+      "version": "1.0.0",
+      "contact":{
+      "email": "Chamone8@gmail.com"
+
+      }
+    },
+    "basePath": "/",
+    "paths": {
+      "login/cadastro": {
+        "post":{
+          "descripition": "post do login do usuario",
+          "sumary":"cadastrar usuario",
+          "tags": ["Login"],
+          "parameters":[   
+              {
+                "in": "query",
+                "name": "nome",
+                "type": "string"
+              },
+              {
+                "in": "query",
+                "name": "senha",
+                "type": "string"
+              }
+        ],
+          "responses":{
+            "200":{
+                "descripition": "OK"
+            }
+                }
+            }
+        }
+    }
+}
