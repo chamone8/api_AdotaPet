@@ -10,8 +10,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.21.1",
+    "config": "^3.3.6",
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "js-yaml": "^4.1.0",
+    "nodemon": "^2.0.12",
+    "swagger-tools": "^0.10.4",
     "swagger-ui-express": "^4.1.6"
   }
 }

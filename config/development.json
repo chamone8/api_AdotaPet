@@ -1,0 +1,10 @@
+{
+    "ENV": "development",
+    "SERVER": {
+        "HOST": "localhost",
+        "PORT": 2222
+    },
+    "API_ACESSO": {
+        "BASE_URL": "http://localhost:33/v1"
+    }
+}

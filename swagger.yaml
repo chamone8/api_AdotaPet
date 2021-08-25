@@ -1,0 +1,99 @@
+swagger: "2.0"
+info:
+  description: "Descrição API Portal Fornecedor"
+
+  version: '1.2.13'
+  title: "API Portal Fornecedor"
+  contact:
+    email: "ti.backend@unidas.com.br"
+host: "localhost:222"
+basePath: "/"
+schemes:
+  - "http"
+consumes:
+  - "application/json"
+produces:
+  - "application/json"
+tags:
+  - name: "Login"
+paths:
+  /login:
+    x-swagger-router-controller: "loginController"
+    post:
+      summary: Logar.
+      description: >
+       Logar no sistema.
+      operationId: postLogin
+      tags:
+        - Login
+      produces:
+        - application/json
+      parameters:
+        - in: "body"
+          name: "body"
+          required: true
+          schema:
+            type: object
+            properties:
+              username:
+                type: string
+              password:
+                type: string
+
+      responses:
+        200:
+          description: OK
+          schema:
+              type: object
+              properties:
+                message:
+                  type: string
+        403:
+          description: "Acesso Negado"
+          schema:
+              type: object
+              properties:
+                message:
+                  type: string
+  /cadastro:
+    x-swagger-router-controller: "loginController"
+    post:
+      summary: Logar.
+      description: >
+       Logar no sistema.
+      operationId: postCadastro
+      tags:
+        - Login
+      produces:
+        - application/json
+      parameters:
+        - in: "body"
+          name: "body"
+          required: true
+          schema:
+            type: object
+            properties:
+              username:
+                type: string
+              password:
+                type: string
+              password2:
+                type: string
+              email:
+                type: string
+
+      responses:
+        200:
+          description: OK
+          schema:
+              type: object
+              properties:
+                message:
+                  type: string
+        403:
+          description: "Acesso Negado"
+          schema:
+              type: object
+              properties:
+                message:
+                  type: string
