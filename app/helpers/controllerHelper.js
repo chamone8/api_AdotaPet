@@ -2,8 +2,8 @@
 const _ = require('lodash');
 const jwt = require('jsonwebtoken');
 const HttpStatusCode = require('./httpStatusCode');
-const ErroException = require('../exception/httpErroException');
-const ConflictException = require('../exception/conflictException');
+const ErroException = require('./exception/httpErroException');
+// const ConflictException = require('./exception/conflictException');
 // const Error = require('../exception/Error')
 
 
@@ -104,7 +104,7 @@ const errorHandler = (err, res) => {
     if (err instanceof ErroException) {
         sendErrorResponse(res, HttpStatusCode.UNPROCESSABLE_ENTITY, err.message);
     }
-    else if (err instanceof ConflictException) {
+    else if (err) {
         sendErrorResponse(res, HttpStatusCode.CONFLICT, err.message, 'UN-E010');
     }
     else {

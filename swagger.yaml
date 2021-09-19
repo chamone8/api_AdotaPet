@@ -1,11 +1,11 @@
 swagger: "2.0"
 info:
-  description: "Descrição API Portal Fornecedor"
+  description: "Descrição API Adota PET"
 
-  version: '1.2.13'
-  title: "API Portal Fornecedor"
+  version: '1.0.0'
+  title: "API Adota PET"
   contact:
-    email: "ti.backend@unidas.com.br"
+    email: "Chamone8@gmail.com"
 host: "localhost:222"
 basePath: "/"
 schemes:
@@ -16,6 +16,8 @@ produces:
   - "application/json"
 tags:
   - name: "Login"
+  - name: "Pets"
+  - name: "ChatBox"
 paths:
   /login:
     x-swagger-router-controller: "loginController"
@@ -82,6 +84,204 @@ paths:
               email:
                 type: string
 
+      responses:
+        200:
+          description: OK
+          schema:
+              type: object
+              properties:
+                message:
+                  type: string
+        403:
+          description: "Acesso Negado"
+          schema:
+              type: object
+              properties:
+                message:
+                  type: string
+  /cadastro/pet:
+    x-swagger-router-controller: "petController"
+    post:
+      summary: Logar.
+      description: >
+       Logar no sistema.
+      operationId: postPets
+      tags:
+        - Pets
+      produces:
+        - application/json
+      parameters:
+        - in: "body"
+          name: "body"
+          required: true
+          schema:
+            type: object
+            properties:
+              idDono:
+                type: number
+              nomePet:
+                type: string
+              nomeDono:
+                type: string
+              idadePet:
+                type: number
+              racaPet:
+                type: string
+              estado:
+                type: string
+              bairro:
+                type: string
+              endereco:
+                type: string
+              cidade:
+                type: string
+              inseridoPor:
+                type: number
+              possuiRg:
+                type: boolean
+              doencas:
+                type: string
+              vacinas:
+                type: string
+              infomacoesAdicionais:
+                type: string
+      responses:
+        200:
+          description: OK
+          schema:
+              type: object
+              properties:
+                message:
+                  type: string
+        403:
+          description: "Acesso Negado"
+          schema:
+              type: object
+              properties:
+                message:
+                  type: string
+  /pets:
+    x-swagger-router-controller: "petController"
+    get:
+      summary: Logar.
+      description: >
+       Logar no sistema.
+      operationId: getPets
+      tags:
+        - Pets
+      produces:
+        - application/json
+      parameters:
+        - in: "query"
+          name: "id"
+          type: "string"
+      responses:
+        200:
+          description: OK
+          schema:
+              type: object
+              properties:
+                idDono:
+                  type: number
+                nomePet:
+                  type: string
+                nomeDono:
+                  type: string
+                idadePet:
+                  type: number
+                racaPet:
+                  type: string
+                estado:
+                  type: string
+                bairro:
+                  type: string
+                endereco:
+                  type: string
+                cidade:
+                  type: string
+                inseridoPor:
+                  type: number
+                possuiRg:
+                  type: boolean
+                doencas:
+                  type: string
+                vacinas:
+                  type: string
+                infomacoesAdicionais:
+                  type: string
+        403:
+          description: "Acesso Negado"
+          schema:
+              type: object
+              properties:
+                message:
+                  type: string
+  /chatBox/cadastro:
+    x-swagger-router-handle-subpaths: true
+    x-swagger-router-controller: "ChatController"
+    post:
+      summary: Logar.
+      description: >
+       Logar no sistema.
+      operationId: "postchat"
+      tags:
+        - ChatBox
+      produces:
+        - "application/xml"
+        - "application/json"
+      parameters:
+        - in: "body"
+          name: "body"
+          required: true
+          schema:
+            type: object
+            properties:
+              idChartBox:
+                type: number
+              nome:
+                type: string
+              texto:
+                type: string
+              inseridoPor:
+                type: number
+              status:
+                type: string
+              bairro:
+                type: string
+              Aberto:
+                type: boolean
+      responses:
+        200:
+          description: OK
+          schema:
+              type: object
+              properties:
+                message:
+                  type: string
+        403:
+          description: "Acesso Negado"
+          schema:
+              type: object
+              properties:
+                message:
+                  type: string
+  /chatBox:
+    x-swagger-router-controller: "petController"
+    get:
+      summary: Logar.
+      description: >
+       Logar no sistema.
+      operationId: getPets
+      tags:
+        - ChatBox
+      produces:
+        - application/json
+      parameters:
+        - in: "query"
+          name: "idChatBox"
+          required: true
+          type: "integer"
+          format: "int64"
       responses:
         200:
           description: OK

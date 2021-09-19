@@ -5,7 +5,8 @@ const cors = require('cors');
 var swaggerUi = require('swagger-ui-express')
 const yaml = require('js-yaml');
 const path = require('path');
-
+require('./app/model/petModel')
+require('./app/config/database');
 const fs   = require('fs');
 var spec = fs.readFileSync('swagger.yaml', 'utf8');
 var swaggerDocument = yaml.load(spec);
