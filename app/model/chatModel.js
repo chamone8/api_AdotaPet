@@ -5,7 +5,6 @@ const Schema = mongoose.Schema;
 const ChatBoxSchema = new Schema({
     idChatBox: {
         type: Number,
-        required: true, 
         startAt: 658,
         incrementBy: 1
     },
@@ -32,7 +31,6 @@ const ChatBoxSchema = new Schema({
     },
     Aberto: {
         type: Boolean,
-        required: true,
         default: false
     }
 })

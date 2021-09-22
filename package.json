@@ -20,6 +20,7 @@
     "nodemon": "^2.0.12",
     "swagger-tools": "^0.10.4",
     "swagger-ui-express": "^4.1.6",
+    "swagger-express-mw": "^0.7.0",
     "utf8": "^3.0.0"
   }
 }

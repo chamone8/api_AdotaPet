@@ -1,11 +1,12 @@
 const express = require('express');
 const app = express();
-// const route = require('./app/router');
+const route = require('./app/router');
 const cors = require('cors');
 var swaggerUi = require('swagger-ui-express')
 const yaml = require('js-yaml');
 const path = require('path');
 require('./app/model/petModel')
+require('./app/model/chatModel')
 require('./app/config/database');
 const fs   = require('fs');
 var spec = fs.readFileSync('swagger.yaml', 'utf8');
@@ -14,10 +15,10 @@ const swaggerTools = require('swagger-tools');
 
 
 app.use(express.json());
-// app.use(cors());
+app.use(cors());
 
 const server = require('http').Server(app); // const server = http.Server(app)  é a mesma coisa
-// app.use(route);
+app.use(route);
 
 swaggerTools.initializeMiddleware(swaggerDocument, function (middleware) {
 

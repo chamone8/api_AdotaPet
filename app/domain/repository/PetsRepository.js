@@ -1,3 +1,4 @@
+require('../../model/petModel');
 const mongoose = require('mongoose');
 const modelPets = mongoose.model('Pets');
 

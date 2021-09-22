@@ -20,6 +20,7 @@ class ChatRepository {
             results.save()
                 .then(() => console.log({ sucess: true, statuscode: 200, message: 'Cadastro efetuado com sucesso' }))
                 .catch(err => console.log({ sucess: false, statuscode: 500, message: 'Cadastro não Efetuado, entre em contado com o suporte ' + err }))
+            return results;
 
         } catch (error) {
             console.log(error)

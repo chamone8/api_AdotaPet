@@ -57,6 +57,45 @@ paths:
               properties:
                 message:
                   type: string
+  /Arquivo/teste:
+    x-swagger-router-controller: "arquivoController"
+    post:
+      tags:
+        - "Atendimentos"
+      summary: ""
+      description: ""
+      operationId: "postArquivos"
+      parameters:
+        - in: "body"
+          name: "body"
+          required: true
+          schema:
+            type: object
+            properties:
+              username:
+                type: string
+              password:
+                type: string
+              password2:
+                type: string
+              email:
+                type: string
+
+      responses:
+        200:
+          description: OK
+          schema:
+              type: object
+              properties:
+                message:
+                  type: string
+        403:
+          description: "Acesso Negado"
+          schema:
+              type: object
+              properties:
+                message:
+                  type: string
   /cadastro:
     x-swagger-router-controller: "loginController"
     post:
@@ -218,7 +257,7 @@ paths:
                   type: string
   /chatBox/cadastro:
     x-swagger-router-handle-subpaths: true
-    x-swagger-router-controller: "ChatController"
+    x-swagger-router-controller: "chatController"
     post:
       summary: Logar.
       description: >
@@ -266,12 +305,12 @@ paths:
                 message:
                   type: string
   /chatBox:
-    x-swagger-router-controller: "petController"
+    x-swagger-router-controller: "chatController"
     get:
       summary: Logar.
       description: >
        Logar no sistema.
-      operationId: getPets
+      operationId: getChat
       tags:
         - ChatBox
       produces:

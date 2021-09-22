@@ -18,7 +18,7 @@ class SpAPICadastroPetPost {
         if (typeof obj.inseridoPor !== 'undefined' && typeof obj.inseridoPor === 'number') {
             this.inseridoPor = obj.inseridoPor;
         }
-        if (typeof obj.status !== 'undefined' && typeof obj.status === 'string') {
+        if (typeof obj.status !== 'undefined' && typeof obj.status === 'boolean') {
             this.status = obj.status;
         }
     }

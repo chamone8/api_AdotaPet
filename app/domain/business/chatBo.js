@@ -10,17 +10,21 @@ class PetsBO  {
     }
 
     async saveChat(payload) {
-        let procedure = new SpAPICadastroChatPost();
-        const repository = new ChatRepository();
+        try {
+            let procedure = new SpAPICadastroChatPost();
+            const repository = new ChatRepository();
+            
+            procedure.setParameter(payload);
+            
+            let result  = await repository.saveChat(procedure);
+    
+            return result;//PostResponseDTO.dto('dados Inserido com sucesso!!!');    
+        } catch (error) {
+            console.log(error)
+        }
         
-        procedure.setParameter(payload);
-        
-        await repository.saveChat(procedure);
-
-        return PostResponseDTO.dto('dados Inserido com sucesso!!!');
     }
     async findChat(id) {
-        console.log(id)
         const repository = new ChatRepository();
         let result = await repository.findChat(id);
 
