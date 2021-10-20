@@ -9,7 +9,7 @@ const PetsSchema = new Schema({
         incrementBy: 1
     },
     idDono: {
-        type: Number,
+        type: String,
         required: true
     },
     nomePet: {
@@ -53,7 +53,7 @@ const PetsSchema = new Schema({
         required: true
     },
     possuiRg: {
-        type: Boolean,
+        type: String,
         default: false
     },
     vacinas: {
@@ -67,6 +67,10 @@ const PetsSchema = new Schema({
     informacoesAdicionais:{
         type: String,
         required: false
+    },
+    descricao:{
+        type: String,
+        required: true
     }
 })
 

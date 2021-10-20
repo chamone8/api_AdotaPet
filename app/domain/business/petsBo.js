@@ -4,18 +4,18 @@ const SpAPICadastroPetPost =require('../interface/spAPICadastroPetPost');
 const PetsRepository = require('../repository/PetsRepository');
 const PostResponseDTO = require('../dto/postResponseDTO');
 
+
 class PetsBO  {
     constructor() {
-        
     }
 
     async savePets(payload) {
         let procedure = new SpAPICadastroPetPost();
-        procedure.setParameter(payload);
+        // procedure.setParameter(payload);
         const repository = new PetsRepository();
-        await repository.savePets(procedure);
+       let results = await repository.savePets(payload);
 
-        return PostResponseDTO.dto('dados Inserido com sucesso!!!');
+        return results;
     }
     async findPets(id) {
         console.log(id)

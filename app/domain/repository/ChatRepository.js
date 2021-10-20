@@ -26,7 +26,7 @@ class ChatRepository {
             console.log(error)
         }
     }
-    async findChat(req, res) {
+    async findChat(filter) {
         try {
           let result = await  modelChat.find()
 

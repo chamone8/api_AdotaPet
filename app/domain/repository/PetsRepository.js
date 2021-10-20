@@ -22,12 +22,16 @@ class PetsRepository {
                 possuiRg: filter.possuiRg,
                 vacinas: filter.vacinas,
                 doencas: filter.doencas,
-                informacoesAdicionais: filter.informacoesAdicionais
+                informacoesAdicionais: filter.infomacoesAdicionais,
+                AnimalPerdido: filter.AnimalPerdido,
+                descricao: filter.descricao
+
+
             });
 
             results.save()
                 .then(() => console.log({ sucess: true, statuscode: 200, message: 'Cadastro efetuado com sucesso' }))
-                .catch(err => console.log({ sucess: false, statuscode: 500, message: 'Cadastro não Efetuado, entre em contado com o suporte ' + err }))
+                .catch(err => console.log({ sucess: false, statuscode: 500, message: 'Erro no metodo savePets ' + err }))
 
         } catch (error) {
             console.log(error)
